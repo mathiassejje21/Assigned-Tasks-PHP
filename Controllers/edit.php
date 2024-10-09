@@ -24,12 +24,18 @@ if (isset($_GET["id"])) {
         <header> | Update Tasks | </header>
         <section class="cotainerAssigned">
             <p>Modific Tasks</p>
-
-            <form action="index.php" method="post">
+            <?php
+            require_once("./conexion.php");
+            require_once("./edit-task.php");
+            ?>
+            <form action="" method="post">
                 <input type="hidden" value="<?= $row['id'] ?>">
                 <input name="nombre" class="nametarea" maxlength="30" type="text" value="<?= $row['nombre'] ?>" placeholder="Nombre de la tarea">
-                <textarea name="descripcion" rows="4" value="<?= $row['texttareas'] ?>" placeholder="Descripcion"></textarea>
-                <input name="crear" id="button" type="submit" value="Crear">
+                <textarea name="descripcion" rows="4" placeholder="Descripcion"><?= $row['texttareas'] ?></textarea>
+                <div class="buttons">
+                    <input name="volver" id="button-volver" type="submit" value="Volver">
+                    <input name="editar" id="button" type="submit" value="Editar">
+                </div>
             </form>
         </section>
 
