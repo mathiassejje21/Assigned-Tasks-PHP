@@ -6,14 +6,15 @@ if (!empty($_POST["crear"])) {
 
 
     if (!empty($vername) && !empty($verdescription)) {
+        $id = null;
         $nombre = $_POST['nombre'];
         $text = $_POST['descripcion'];
 
         // Preparar la consulta
-        $sql = "INSERT INTO tareas(nombre, texttareas) VALUES(?, ?)";
+        $sql = "INSERT INTO tareas(id, nombre, texttareas) VALUES(?, ?, ?)";
         $stms = $conexion->prepare($sql);
 
-        $stms->bind_param("ss", $nombre, $text);
+        $stms->bind_param("sss", $id, $nombre, $text);
         $stms->execute();
 ?>
         <div class="message-correct">Tarea creada correctamente.</div>
