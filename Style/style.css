@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    user-select: none;
 }
 
 .containerPrincipal{
@@ -87,14 +87,112 @@
 }
 
 .containertasks{
-    background-color: #eeee;
-    display: flex;
-    flex-direction: column;
     width: 90%;
     min-width: 480px;
     margin: 50px auto;
-    border: 1.4px solid #eeee;
+    box-shadow: 5px 10px 40px #d6d6d6ef;
+}
+
+.message-error, .message-correct{
+    width: 100%;
+    text-align: center;
+    padding: 15px 0px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-style: italic;
+}
+.message-error{
+    background-color: rgb(236, 137, 137);
+    color: rgb(255, 0, 0);
+}
+
+.message-correct{
+    background-color: rgb(174, 219, 174);
+    color: green;
+}
+
+.acciones{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+}
+
+.accion{
+    font-size: 12px;
+    font-style: italic;
+    width: 60px;
+    height: 30px;
+    border-radius: 6.5px;
+    outline: none;
+    text-align: center;
+    padding: 9px 0px;
+    text-decoration: none;
+}
+
+.accion.editar{
+    background-color: #fff5b8;
+    color: #907d01;
+    transition: transform 0.3s ease-in-out;
+}
+
+.accion.editar:hover{
+    transform: scale(0.8);
+}
+
+.accion.eliminar{
+    background-color: #fbc9c9;
+    color: #840000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.accion.eliminar:hover{
+    transform: scale(0.8);
+}
+
+.containertasks {
+    padding: 20px;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    padding:20px;
-    box-shadow: 4px 10px 30px #d6d6d6ef;
+    background-color: #fff;
+}
+
+.containertasks table{
+    width: 100%;
+    border-collapse: separate;
+    border-radius: 10px;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.containertasks th, .containertasks td {
+    font-family: Lucida;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+
+.containertasks th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.containertasks td {
+    background-color: #fff;
+    color: #555;
+}
+
+.select-accion{
+    width: 10%;
+    max-width: 200px;
+    min-width: 50px;
+}
+
+.select-name{
+    width: 25%;
+    max-width: 400px;
+    min-width: 150px;
 }
